@@ -13,7 +13,9 @@ The waitlist landing page: "Find your teacher. Or become one." It's one static p
 5. Copy the **Web app URL**. It ends in `/exec`.
 6. In `index.html`, paste it into `const ENDPOINT = "";` near the bottom of the file.
 
-Each signup becomes a row in a **Waitlist** tab, with the path (Learner or Teacher), contact details, answers (including One-to-one, Group or Either for learners) and source.
+The form has two steps. **Step 1** (path, name, email, WhatsApp) adds a row to a **Waitlist** tab, so everyone who joins is saved even if they stop there. **Step 2** is optional ("Help us match you"): brother or sister, country, and for learners what they want to learn, one-to-one or group, and level; for teachers what they teach, experience, ijazah and a line about them. Those answers are filled into the same row, found by email, with the time in **Details added**.
+
+If you deployed an earlier version of `Code.gs`, paste the new one in and publish a **new version** (see below). Then delete the old **Waitlist** tab, if it has only test rows, so the new columns are created.
 
 If you change `Code.gs` later, use **Deploy → Manage deployments → Edit → New version**, so the URL stays the same.
 
