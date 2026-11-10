@@ -12,6 +12,7 @@ const FIELDS = [
   ['Country', 'country'],
   ['Brother/Sister', 'gender'],
   ['Wants to learn', 'interests'],
+  ['Class type', 'classType'],
   ['Level', 'level'],
   ['Teacher preference', 'teacherPref'],
   ['Teaches', 'teaches'],

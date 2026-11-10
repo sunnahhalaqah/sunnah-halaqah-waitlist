@@ -13,7 +13,7 @@ The waitlist landing page: "Find your teacher. Or become one." It's one static p
 5. Copy the **Web app URL**. It ends in `/exec`.
 6. In `index.html`, paste it into `const ENDPOINT = "";` near the bottom of the file.
 
-Each signup becomes a row in a **Waitlist** tab, with the path (Learner or Teacher), contact details, answers and source.
+Each signup becomes a row in a **Waitlist** tab, with the path (Learner or Teacher), contact details, answers (including One-to-one, Group or Either for learners) and source.
 
 If you change `Code.gs` later, use **Deploy → Manage deployments → Edit → New version**, so the URL stays the same.
 
