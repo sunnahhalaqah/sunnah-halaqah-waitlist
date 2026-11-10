@@ -68,10 +68,17 @@ h1 .hl { color: var(--accent); }
 .cta:hover { background: #000; }
 .cta-note { display: block; margin-top: 10px; font-size: 14px; color: var(--mute); }
 
-.art { position: relative; height: 330px; margin: 0 -20px; }
-.word {
-  position: absolute; right: 20px; top: 0; margin: 0;
+.art { position: relative; height: 520px; margin: 18px -20px 0; }
+/* back plane: the real ḥalqah, bleeding off the screen edges */
+.photo { position: absolute; left: 0; right: 0; top: 0; height: min(86vw, 460px); overflow: hidden; background: #E9E2D6; }
+.photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 48%; display: block;
+  transform: scale(1.08); transition: transform 2.6s var(--ease); }
+.on .photo img { transform: scale(1); }
+/* middle plane: the word, overlapping the photo's lower edge */
+.word {   /* phones: left, over the light cushions (the charcoal one is bottom-right) */
+  position: absolute; left: 16px; top: 0; margin: 0;
   font-size: clamp(120px, 36vw, 220px); line-height: 1.2; color: var(--ink); white-space: nowrap;
+  text-shadow: 0 0 2px #fff, 0 0 26px rgba(255,255,255,.85);
 }
 .word .q { color: var(--ink); transition: color .9s var(--ease); }
 .on .word .q { color: var(--accent); }
@@ -208,8 +215,13 @@ button.submit[disabled] { opacity: .6; cursor: wait; }
   h1 { font-size: clamp(54px, 6vw, 76px); margin: 18px 0 22px; }
   h1 span { white-space: nowrap; }
   .lead { font-size: 19px; margin-bottom: 28px; }
-  .art { height: 420px; margin: 0; }
-  .word { font-size: 230px; right: 0; top: 30px; }
+  /* the photo runs to the top of the page; the header floats over it, logo on the stone */
+  header { position: absolute; top: 0; left: 0; right: 0; }
+  .hero .wrap { align-items: start; }
+  .copy { padding-top: 190px; }
+  .art { height: 720px; margin: 0; }
+  .photo { left: 0; right: calc(-48px - max(0px, (100vw - 1200px) / 2)); height: 640px; }
+  .word { font-size: 230px; right: auto; left: -64px; }
   section.block { padding: 96px 0; }
   .formgrid { grid-template-columns: .85fr 1.15fr; gap: 64px; align-items: start; }
   .aside { position: sticky; top: 40px; }
@@ -246,6 +258,7 @@ button.submit[disabled] { opacity: .6; cursor: wait; }
       </div>
 
       <div class="art" id="art" aria-hidden="true">
+        <div class="photo"><img src="assets/halaqah-circle.webp" alt="" width="825" height="1024"></div>
         <p class="word ar" id="word">حَلۡ<span class="q" id="q">قَ</span>ة</p>
         <div class="note" id="note">
           <span class="ring"></span><span class="rule"></span>
@@ -443,6 +456,9 @@ const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 function layout() {
   const wide = innerWidth >= 960;
   art.style.height = '';
+  // The word sits across the photo's lower edge: most of it on the photo, its foot on white.
+  const word = document.getElementById('word'), ph = art.querySelector('.photo').offsetHeight;
+  word.style.top = Math.round(ph - word.offsetHeight * 0.66) + 'px';
   const box = art.getBoundingClientRect();
 
   // The note: ring on the qāf, a rule out to the left under the word, the label below it.
