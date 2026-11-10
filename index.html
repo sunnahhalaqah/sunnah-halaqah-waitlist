@@ -13,17 +13,16 @@
 <link rel="preload" href="assets/fonts/UthmanicHafs1Ver18.ttf" as="font" type="font/ttf" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&family=Oswald:wght@400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Oswald:wght@400&display=swap" rel="stylesheet">
 <style>
 @font-face { font-family: "Hafs"; src: url("assets/fonts/UthmanicHafs1Ver18.ttf"); font-display: block; }
 :root {
   --paper: #FFFFFF;
   --ink: #111111;
-  --accent: #A9443C;   /* one use: "Opening soon" */
+  --accent: #A9443C;   /* sparingly: the headline's key words, "Opening soon" */
   --mute: #5E5E5E;
   --soft: #CFCFCF;
   --keyline: 0 0 0 3px #FFFFFF, 0 10px 22px rgba(0,0,0,.26);
-  --serif: "Instrument Serif", Georgia, serif;
   --sans: "Outfit", system-ui, sans-serif;
   --out: cubic-bezier(.16,1,.3,1);          /* long-tail arrival */
   --back: cubic-bezier(.34,1.56,.64,1);     /* small overshoot, tiles only */
@@ -35,21 +34,17 @@ body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(
   -webkit-font-smoothing: antialiased; overflow-x: hidden; }
 a { color: inherit; }
 .ar { font-family: "Hafs", serif; direction: rtl; font-weight: normal; }
-.serif { font-family: var(--serif); font-weight: 400; }
-.kick { font-size: 12px; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; color: var(--mute); margin: 0; }
+.kick { font-size: 12px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--mute); margin: 0; }
 .soon { color: var(--accent); font-weight: 500; }
 .tile { display: inline-grid; place-items: center; border-radius: 22%; background: var(--ink); color: #fff;
   font-family: "Hafs", serif; line-height: 1; box-shadow: var(--keyline); }
 .rule { display: block; height: 1px; background: var(--ink); }
 
 /* dictionary entry: the recurring unit of the page */
-.entry .hw { font-family: var(--serif); font-size: 34px; line-height: 1; margin: 0; }
-.entry .hw i { font-size: 17px; color: var(--mute); margin-left: 8px; }
+.entry .hw { font-size: 30px; font-weight: 600; letter-spacing: -.02em; line-height: 1; margin: 0; }
+.entry .hw i { font-style: normal; font-weight: 400; letter-spacing: 0; font-size: 15px; color: var(--mute); margin-left: 8px; }
 .entry p { margin: 10px 0 0; font-size: 16px; color: #333; max-width: 30em; }
 .entry p b { font-weight: 500; color: var(--ink); }
-.root { display: flex; direction: rtl; gap: 9px; align-items: center; }
-.root .tile { width: 40px; height: 40px; font-size: 24px; padding-bottom: 4px; }
-.root .lab { direction: ltr; margin-right: 6px; }
 
 .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; font: 500 17px var(--sans);
   padding: 17px 30px; border-radius: 999px; border: 0; background: var(--ink); color: #fff; text-decoration: none; cursor: pointer; }
@@ -60,17 +55,15 @@ a { color: inherit; }
 .logo svg { display: block; height: 100%; width: auto; }
 
 /* ---------- 1 · hero: lesson one, our name ---------- */
-.hero { position: relative; min-height: min(100svh, 980px); display: grid; grid-template-columns: minmax(0, 1fr);
+.hero { position: relative; display: grid; grid-template-columns: minmax(0, 1fr);
   grid-template-rows: auto auto auto 1fr; padding: 22px var(--g) 28px; overflow: hidden; }
 .hero .logo { height: 26px; }
 .word { margin: 6px 0 0; min-width: 0; font-size: min(50vw, 230px); line-height: 1.32; white-space: nowrap; text-align: right; }
 .word span { display: inline-block; }   /* the reveal mask; the letters inside stay one word */
-.hero .entry { display: grid; grid-template-columns: 1fr auto; column-gap: 12px; align-items: end; margin-top: 4px; }
-.hero .entry p { grid-column: 1 / -1; }
-.hero .lead { align-self: end; margin-top: 26px; }
-.hero .lead .kick { margin-bottom: 10px; }
-h1 { font-family: var(--serif); font-weight: 400; font-size: min(13.8vw, 64px); line-height: .9; letter-spacing: -.02em; margin: 0; text-wrap: balance; }
-h1 em { font-style: italic; }
+.hero .entry { margin-top: -26px; }   /* tuck up into the empty space below the word */
+.hero .lead { margin-top: 36px; }
+h1 { font-weight: 600; font-size: min(12vw, 52px); line-height: 1.02; letter-spacing: -.035em; margin: 0; text-wrap: balance; }
+h1 em { font-style: normal; color: var(--accent); }
 .hero .act { display: grid; gap: 10px; margin-top: 22px; }
 .hero .act .btn { width: 100%; }
 .hero .act small { text-align: center; font-size: 13px; color: var(--mute); }
@@ -78,18 +71,19 @@ h1 em { font-style: italic; }
 
 /* ---------- 2 · trust: lesson two, ijāzah ---------- */
 .trust { position: relative; padding: 56px var(--g) 64px; overflow: hidden; }
-.trust .word2 { margin: 0 0 4px; font-size: min(44vw, 200px); line-height: 1.3; white-space: nowrap; text-align: right; }
-.trust .big { font-family: var(--serif); font-size: 44px; line-height: 1; letter-spacing: -.01em; margin: 40px 0 0; text-wrap: balance; }
-.trust .big em { font-style: italic; }
+.w2box { container-type: inline-size; min-width: 0; }
+.trust .word2 { margin: 0 0 4px; font-size: min(58cqw, 200px); line-height: 1.3; white-space: nowrap; text-align: right; }
+.trust .big { font-size: 36px; font-weight: 600; line-height: 1.05; letter-spacing: -.035em; margin: 40px 0 0; text-wrap: balance; }
+.trust .big em { font-style: normal; }
 .trust ol { list-style: none; margin: 34px 0 0; padding: 0; display: grid; gap: 14px; }
 .trust li { display: grid; grid-template-columns: 40px 1fr; align-items: baseline; font-size: 19px; font-weight: 500; letter-spacing: -.01em; line-height: 1.3; }
-.trust li .n { font-family: var(--serif); font-style: italic; font-size: 22px; color: var(--mute); font-weight: 400; }
+.trust li .n { font-size: 14px; font-weight: 500; letter-spacing: .08em; color: var(--mute); }
 .trust .kick { margin-bottom: 16px; }
 
 /* ---------- 3 · join: lesson three, your place ---------- */
 .join { padding: 56px var(--g) 72px; scroll-margin-top: 0; }
-.join .intro h2 { font-family: var(--serif); font-weight: 400; font-size: 52px; line-height: .95; letter-spacing: -.01em; margin: 14px 0 0; text-wrap: balance; }
-.join .intro h2 em { font-style: italic; }
+.join .intro h2 { font-weight: 600; font-size: 40px; line-height: 1.04; letter-spacing: -.035em; margin: 14px 0 0; text-wrap: balance; }
+.join .intro h2 em { font-style: normal; }
 .join .intro p { margin: 16px 0 0; color: #333; font-size: 17px; max-width: 26em; }
 .panes { margin-top: 36px; max-width: 640px; }
 .step { margin: 0 0 18px; }
@@ -98,7 +92,7 @@ h1 em { font-style: italic; }
 .paths legend { position: absolute; left: -9999px; }
 .path { position: relative; }
 .path input, .opt input, .chip input { position: absolute; opacity: 0; pointer-events: none; }
-.path label { cursor: pointer; font-family: var(--serif); font-size: 38px; line-height: 1.1; color: #A8A8A8;
+.path label { cursor: pointer; font-size: 28px; font-weight: 600; letter-spacing: -.02em; line-height: 1.2; color: #A8A8A8;
   border-bottom: 2px solid transparent; transition: color .25s, border-color .25s; }
 .path input:checked + label { color: var(--ink); border-color: var(--ink); }
 .path input:focus-visible + label { outline: 3px solid var(--ink); outline-offset: 4px; }
@@ -135,7 +129,7 @@ button.btn[disabled] { opacity: .6; cursor: wait; }
 .err { color: var(--accent); font-size: 15px; margin: 0; }
 .err:empty { display: none; }
 .okhead { margin-bottom: 30px; }
-.okhead h3, .done h3 { font-family: var(--serif); font-weight: 400; font-size: 44px; line-height: 1; margin: 10px 0 0; }
+.okhead h3, .done h3 { font-weight: 600; font-size: 34px; letter-spacing: -.03em; line-height: 1.05; margin: 10px 0 0; }
 .okhead p { margin: 10px 0 0; color: #333; }
 .done p { color: #333; margin: 14px 0 24px; max-width: 28em; }
 .ghost { font: inherit; font-size: 15px; font-weight: 500; cursor: pointer; padding: 12px 22px; border-radius: 999px;
@@ -147,15 +141,10 @@ footer .logo { height: 22px; }
 
 /* ---------- motion ---------- */
 @keyframes write { from { clip-path: inset(-30% 0 -30% 100%); } to { clip-path: inset(-30% 0 -30% 0); } }
-@keyframes land { from { opacity: 0; transform: translateY(-34px) scale(.7); } to { opacity: 1; transform: none; } }
 @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
 @keyframes draw { from { transform: scaleX(0); } to { transform: scaleX(1); } }
 .word span { animation: write 1.5s var(--out) .15s both; }
-.hero .root .tile { animation: land .7s var(--back) both; }
-.hero .root .tile:nth-child(1) { animation-delay: 1.15s; }
-.hero .root .tile:nth-child(2) { animation-delay: 1.24s; }
-.hero .root .tile:nth-child(3) { animation-delay: 1.33s; }
-.hero .entry .hw, .hero .entry p, .hero .root .lab { animation: rise .8s var(--out) .9s both; }
+.hero .entry .hw, .hero .entry p { animation: rise .8s var(--out) .9s both; }
 .hero .lead { animation: rise .9s var(--out) .55s both; }
 .hero .hair { transform-origin: right center; animation: draw .7s var(--out) 1.1s both; }
 .trust .word2 span { display: inline-block; }
@@ -168,7 +157,7 @@ footer .logo { height: 22px; }
   .row2 { grid-template-columns: 1fr 1fr; }
   .hero .act { display: flex; align-items: center; gap: 24px; }
   .hero .act .btn { width: auto; }
-  h1 { font-size: 84px; }
+  h1 { font-size: 68px; }
 }
 /* ---------- desktop: the word is the image ---------- */
 @media (min-width: 1000px) {
@@ -176,29 +165,29 @@ footer .logo { height: 22px; }
   .hero { min-height: clamp(720px, 100svh, 1000px); grid-template-columns: minmax(340px, 400px) minmax(0, 1fr);
     grid-template-rows: auto 1fr auto; column-gap: 40px; padding: 44px var(--g) 52px; }
   .hero .logo { height: 30px; grid-column: 1; grid-row: 1; }
-  .word { position: absolute; top: -30px; right: 24px; margin: 0; font-size: clamp(360px, 34vw, 520px); line-height: 1.25; }
+  .word { position: absolute; top: -30px; right: 24px; margin: 0; font-size: clamp(300px, 32vw, 520px); line-height: 1.25; }
   .hero .entry { grid-column: 1; grid-row: 2; align-self: start; margin-top: 96px; display: block; position: relative; }
-  .hero .entry .hw { font-size: 44px; }
-  .hero .entry .hw i { font-size: 22px; }
-  .hero .entry p { font-size: 17px; margin-top: 14px; }
-  .hero .root { justify-content: flex-end; margin-top: 22px; }
-  .root .tile { width: 52px; height: 52px; font-size: 32px; padding-bottom: 6px; }
-  .hero .hair { display: block; position: absolute; left: 250px; top: 72px; width: calc(100% - 250px + 70px); }
-  .hero .lead { grid-column: 1 / -1; grid-row: 3; margin-top: 0; }
-  h1 { font-size: clamp(88px, 7.6vw, 112px); }
+  .hero .entry .hw { font-size: 40px; }
+  .hero .entry .hw i { font-size: 18px; }
+  .hero .entry p { font-size: 17px; margin-top: 14px; max-width: 21em; }
+  .hero .hair { display: block; position: absolute; left: 250px; top: 72px;
+    /* runs from after "noun" to the word's left edge (the word is 1.656em wide, right: 24px) */
+    width: calc(100vw - 24px - 1.656 * clamp(300px, 32vw, 520px) - var(--g) - 250px + 16px); }
+  .hero .lead { grid-column: 1 / -1; grid-row: 3; margin-top: 56px; }
+  h1 { font-size: clamp(64px, 5.6vw, 84px); }
   .hero .act { margin-top: 30px; }
   .hero .act small { font-size: 14px; }
 
   .trust { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 600px); column-gap: 64px; align-items: center; padding: 120px var(--g) 130px; }
-  .trust .word2 { font-size: clamp(240px, 25vw, 380px); margin: 0; text-align: right; }
-  .trust .big { font-size: 64px; margin-top: 56px; }
+  .trust .word2 { font-size: min(58cqw, 380px); margin: 0; text-align: right; }
+  .trust .big { font-size: 52px; margin-top: 56px; }
   .trust li { font-size: 22px; }
 
   .join { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 640px); column-gap: 64px; padding: 110px var(--g) 120px; border-top: 1px solid #EAEAEA; }
   .join .intro { position: sticky; top: 48px; align-self: start; }
-  .join .intro h2 { font-size: 84px; }
+  .join .intro h2 { font-size: 64px; }
   .panes { margin-top: 0; }
-  .path label { font-size: 44px; }
+  .path label { font-size: 34px; }
   footer { padding: 32px var(--g) 40px; }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -224,11 +213,9 @@ footer .logo { height: 22px; }
       <span class="rule hair" aria-hidden="true"></span>
       <p class="kick" style="margin:0 0 16px">Lesson one · our name</p>
       <p class="hw">ḥalaqah <i>noun</i></p>
-      <div class="root" aria-label="Root letters ḥā, lām, qāf"><span class="tile ar">ح</span><span class="tile ar">ل</span><span class="tile ar">ق</span><span class="kick lab">root</span></div>
       <p><b>A ring. A circle.</b> Students sitting in a circle around a teacher to learn.</p>
     </div>
     <div class="lead">
-      <p class="kick">Take your place in the circle</p>
       <h1 id="h1">Find your teacher.<br><em>Or become one.</em></h1>
       <div class="act">
         <a class="btn" href="#join">Join the waitlist</a>
@@ -239,18 +226,19 @@ footer .logo { height: 22px; }
 
   <!-- 2 · lesson two: who teaches you -->
   <section class="trust" id="trust" aria-labelledby="trust-h">
-    <p class="word2 ar" lang="ar" aria-hidden="true"><span>إِجَازَة</span></p>
+    <div class="w2box"><p class="word2 ar" lang="ar" aria-hidden="true"><span>إِجَازَة</span></p></div>
     <div>
       <p class="kick">Lesson two · who teaches you</p>
       <div class="entry">
         <p class="hw">ijāzah <i>noun</i></p>
         <p><b>Permission. A licence to teach</b>, given by a teacher to a student who has mastered the text.</p>
       </div>
-      <h2 class="big" id="trust-h">Our Qur’an and tajweed teachers <em>hold ijāzah.</em></h2>
+      <h2 class="big" id="trust-h">Learn from teachers you can trust.</h2>
       <ol>
-        <li><span class="n">i</span><span>Every teacher is vetted</span></li>
-        <li><span class="n">ii</span><span>Sisters teach sisters, and brothers teach brothers</span></li>
-        <li><span class="n">iii</span><span>Live online classes</span></li>
+        <li><span class="n">01</span><span>Every teacher is vetted</span></li>
+        <li><span class="n">02</span><span>Our Qur’an and tajweed teachers hold ijāzah</span></li>
+        <li><span class="n">03</span><span>Sisters teach sisters, and brothers teach brothers</span></li>
+        <li><span class="n">04</span><span>Live online classes</span></li>
       </ol>
     </div>
   </section>
@@ -413,7 +401,7 @@ footer .logo { height: 22px; }
 
 <script>
 /* Paste the Google Apps Script web-app URL here (see README.md). Leave empty for preview mode. */
-const ENDPOINT = "";
+const ENDPOINT = "https://script.google.com/macros/s/AKfycby-jte16zjjvNf7LICuddJrhOGs7nt0HBB6_HNVwgZwFE4aI_ZJIT_FGud5AxLEgbiX/exec";
 
 /* ---------- lesson two: the word writes itself in when it scrolls into view ---------- */
 const trust = document.getElementById('trust');

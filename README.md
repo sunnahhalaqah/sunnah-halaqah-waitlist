@@ -2,9 +2,9 @@
 
 The waitlist landing page: "Find your teacher. Or become one." It's one static page (`index.html`). Signups go to a Google Sheet through a small Google Apps Script (`apps-script/Code.gs`).
 
-## 1. Connect the Google Sheet (about 5 minutes, done once)
+## 1. Connect the Google Sheet (done: `ENDPOINT` is set)
 
-1. Signed in as sunnahhalaqah@gmail.com, create a new Google Sheet named **Sunnah Halaqah Waitlist**.
+1. Signed in as the Sunnah Halaqah Google account, create a new Google Sheet named **Sunnah Halaqah Waitlist**.
 2. In the Sheet, go to **Extensions → Apps Script**. Delete what's there, paste all of `apps-script/Code.gs`, and save.
 3. Click **Deploy → New deployment**. Choose the type **Web app**, then set:
    - **Execute as:** Me
@@ -32,4 +32,4 @@ The repo `sunnahhalaqah/sunnah-halaqah-waitlist` must be public to use free GitH
 
     python -m http.server 8766 --directory sunnah-halaqah-waitlist
 
-Until `ENDPOINT` is filled in, the form works but saves nothing, and the thank-you screen says so.
+`ENDPOINT` is set, so signups from a local preview go into the real Sheet too. Delete any test rows afterwards.
