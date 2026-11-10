@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sunnah Halaqah · Join the waitlist</title>
+<meta name="description" content="Find your teacher. Or become one. Sunnah Halaqah helps learners find the right teacher and helps skilled people earn by teaching. Join the waitlist.">
+<meta property="og:title" content="Sunnah Halaqah · Join the waitlist">
+<meta property="og:description" content="Find your teacher. Or become one.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+@font-face { font-family: "Hafs"; src: url("assets/fonts/UthmanicHafs1Ver18.ttf"); font-display: swap; }
+:root {
+  --paper: #FFFFFF;
+  --ink: #111111;
+  --accent: #A9443C;
+  --card: #F2F2F2;
+  --mute: #6B6B6B;
+  --line: #E2E2E2;
+  --radius: 18px;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font-family: "Outfit", system-ui, sans-serif; font-weight: 400; line-height: 1.5;
+  -webkit-font-smoothing: antialiased; overflow-x: hidden;
+}
+a { color: inherit; }
+.wrap { width: 100%; max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+
+/* header */
+header { padding: 22px 0 0; }
+header .wrap { display: flex; align-items: center; justify-content: space-between; }
+.logo { height: 44px; width: auto; display: block; }
+.pill {
+  display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 500;
+  padding: 7px 12px; border: 1px solid var(--line); border-radius: 999px;
+}
+.pill i { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); display: block;
+  animation: pulse 2s ease-in-out infinite; }
+@keyframes pulse { 50% { opacity: .35; } }
+
+/* hero + form */
+.hero { position: relative; padding: 48px 0 56px; }
+.grid { display: grid; gap: 40px; align-items: start; }
+.ar-mark {
+  position: absolute; z-index: -1; pointer-events: none; user-select: none;
+  font-family: "Hafs", serif; direction: rtl; color: var(--card);
+  font-size: clamp(180px, 46vw, 420px); line-height: 1; top: -10px; right: -4%;
+}
+.eyebrow { font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--mute); margin: 0 0 18px; }
+h1 { font-size: clamp(44px, 11vw, 84px); line-height: .98; letter-spacing: -.035em; font-weight: 600; margin: 0 0 22px; }
+h1 em { font-style: italic; font-weight: 300; color: var(--accent); display: block; }
+.lead { font-size: 18px; color: #333; max-width: 30em; margin: 0 0 28px; }
+.points { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; max-width: 30em; }
+.points li { display: flex; gap: 12px; align-items: baseline; font-size: 16px; }
+.points li::before { content: ""; flex: none; width: 9px; height: 9px; background: var(--ink);
+  transform: rotate(45deg) translateY(-1px); border-radius: 2px; }
+
+/* form card */
+.card {
+  background: var(--paper); border: 1px solid var(--line); border-radius: 24px;
+  padding: 22px; box-shadow: 0 1px 0 rgba(0,0,0,.02), 0 24px 60px -30px rgba(0,0,0,.25);
+}
+.card h2 { font-size: 22px; font-weight: 600; letter-spacing: -.01em; margin: 0 0 4px; }
+.card .sub { color: var(--mute); font-size: 15px; margin: 0 0 18px; }
+
+.paths { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 18px; }
+.path { position: relative; }
+.path input { position: absolute; opacity: 0; pointer-events: none; }
+.path label {
+  display: block; height: 100%; cursor: pointer; padding: 14px; border-radius: var(--radius);
+  background: var(--card); border: 2px solid transparent; transition: border-color .15s, background .15s;
+}
+.path b { display: block; font-size: 16px; font-weight: 600; }
+.path span { display: block; font-size: 13px; color: var(--mute); line-height: 1.35; margin-top: 2px; }
+.path input:checked + label { background: var(--paper); border-color: var(--ink); }
+.path input:focus-visible + label { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+.fields { display: grid; gap: 14px; }
+.row2 { display: grid; gap: 14px; }
+.f label, .f .lbl { display: block; font-size: 14px; font-weight: 500; margin-bottom: 6px; }
+.f .opt { color: var(--mute); font-weight: 400; }
+.f input[type=text], .f input[type=email], .f input[type=tel], .f select, .f textarea {
+  width: 100%; font: inherit; font-size: 16px; color: var(--ink); background: var(--paper);
+  border: 1px solid #CFCFCF; border-radius: 12px; padding: 12px 14px; appearance: none;
+}
+.f select { background-image: linear-gradient(45deg, transparent 50%, var(--ink) 50%), linear-gradient(-45deg, transparent 50%, var(--ink) 50%);
+  background-position: calc(100% - 20px) 52%, calc(100% - 15px) 52%; background-size: 5px 5px; background-repeat: no-repeat; padding-right: 36px; }
+.f textarea { min-height: 84px; resize: vertical; }
+.f input:focus, .f select:focus, .f textarea:focus { outline: none; border-color: var(--ink); box-shadow: 0 0 0 3px rgba(17,17,17,.08); }
+.f input:user-invalid, .f select:user-invalid,
+.tried .f input:invalid, .tried .f select:invalid { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(169,68,60,.12); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip input { position: absolute; opacity: 0; pointer-events: none; }
+.chip span { display: inline-block; cursor: pointer; font-size: 14px; padding: 8px 13px; border-radius: 999px;
+  border: 1px solid #CFCFCF; transition: background .15s, color .15s, border-color .15s; }
+.chip input:checked + span { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.chip input:focus-visible + span { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+.branch[hidden] { display: none; }
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+button.submit {
+  width: 100%; font: inherit; font-size: 17px; font-weight: 600; cursor: pointer; margin-top: 4px;
+  padding: 15px 18px; border: 0; border-radius: 14px; background: var(--ink); color: var(--paper);
+  display: flex; align-items: center; justify-content: center; gap: 10px; transition: transform .1s, background .15s;
+}
+button.submit:hover { background: #000; }
+button.submit:active { transform: scale(.99); }
+button.submit[disabled] { opacity: .6; cursor: wait; }
+.fine { font-size: 13px; color: var(--mute); margin: 12px 0 0; text-align: center; }
+.err { color: var(--accent); font-size: 14px; margin: 0; }
+.err:empty { display: none; }
+
+/* success */
+.done { text-align: center; padding: 18px 4px 6px; }
+.done[hidden] { display: none; }
+.done .tick { width: 56px; height: 56px; margin: 0 auto 14px; border-radius: 50%; background: var(--ink); color: var(--paper);
+  display: grid; place-items: center; }
+.done h2 { font-size: 26px; }
+.done p { color: #333; margin: 6px auto 18px; max-width: 26em; }
+.ghost { font: inherit; font-size: 15px; font-weight: 500; cursor: pointer; padding: 11px 18px; border-radius: 12px;
+  border: 1px solid var(--ink); background: var(--paper); color: var(--ink); }
+.note { margin-top: 14px; font-size: 13px; color: var(--accent); }
+
+/* how it works */
+.how { border-top: 1px solid var(--line); padding: 56px 0; }
+.how h2 { font-size: clamp(28px, 6vw, 40px); letter-spacing: -.02em; font-weight: 600; margin: 0 0 28px; max-width: 18em; line-height: 1.1; }
+.cols { display: grid; gap: 16px; }
+.col { background: var(--card); border-radius: 22px; padding: 24px; }
+.col h3 { margin: 0 0 14px; font-size: 20px; font-weight: 600; display: flex; align-items: center; gap: 10px; }
+.col h3 small { font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--mute); }
+.col ol { margin: 0; padding: 0; list-style: none; counter-reset: s; display: grid; gap: 14px; }
+.col li { counter-increment: s; display: grid; grid-template-columns: 30px 1fr; gap: 10px; font-size: 16px; }
+.col li::before { content: counter(s); width: 28px; height: 28px; border-radius: 50%; background: var(--paper);
+  font-size: 13px; font-weight: 600; display: grid; place-items: center; }
+
+footer { border-top: 1px solid var(--line); padding: 28px 0 40px; font-size: 14px; color: var(--mute); }
+footer .wrap { display: flex; flex-wrap: wrap; gap: 10px 24px; justify-content: space-between; align-items: center; }
+footer img { height: 26px; }
+
+@media (min-width: 560px) {
+  .row2 { grid-template-columns: 1fr 1fr; }
+  .card { padding: 28px; }
+}
+@media (min-width: 900px) {
+  header { padding-top: 30px; }
+  .logo { height: 54px; }
+  .hero { padding: 80px 0 96px; }
+  .grid { grid-template-columns: 1.15fr 1fr; gap: 56px; }
+  h1 { font-size: 62px; }
+  h1 .l1 { white-space: nowrap; }
+  .copy { position: sticky; top: 40px; padding-top: 24px; }
+  .ar-mark { top: 20px; right: auto; left: 18%; font-size: 460px; }
+  .cols { grid-template-columns: 1fr 1fr; }
+  .how { padding: 88px 0; }
+}
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <img class="logo" src="assets/logo.svg" alt="Sunnah Halaqah">
+    <span class="pill"><i></i>Waitlist open</span>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="ar-mark" aria-hidden="true">حَلْقَة</div>
+    <div class="wrap grid">
+      <div class="copy">
+        <p class="eyebrow">An academy · Opening soon</p>
+        <h1><span class="l1">Find your teacher.</span> <em>Or become one.</em></h1>
+        <p class="lead">Sunnah Halaqah helps learners find the right teacher, and helps skilled people earn through what they know. Join the waitlist and hear first when we open.</p>
+        <ul class="points">
+          <li>Learners: Arabic, Qur'an, tajweed and more, with a teacher who fits your level.</li>
+          <li>Teachers: share your skill and earn through it.</li>
+          <li>Waitlist members are the first to know when we open.</li>
+        </ul>
+      </div>
+
+      <div class="card" id="join">
+        <form id="form" novalidate>
+          <h2>Join the waitlist</h2>
+          <p class="sub">Takes under a minute.</p>
+
+          <div class="paths" role="radiogroup" aria-label="I want to">
+            <div class="path">
+              <input type="radio" name="path" id="p-learn" value="Learner" checked>
+              <label for="p-learn"><b>I want to learn</b><span>Find the right teacher</span></label>
+            </div>
+            <div class="path">
+              <input type="radio" name="path" id="p-teach" value="Teacher">
+              <label for="p-teach"><b>I want to teach</b><span>Earn through your skill</span></label>
+            </div>
+          </div>
+
+          <div class="fields">
+            <div class="f">
+              <label for="name">Your name</label>
+              <input type="text" id="name" name="name" autocomplete="name" required maxlength="120">
+            </div>
+            <div class="row2">
+              <div class="f">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" autocomplete="email" inputmode="email" required maxlength="200">
+              </div>
+              <div class="f">
+                <label for="whatsapp">WhatsApp <span class="opt">(optional)</span></label>
+                <input type="tel" id="whatsapp" name="whatsapp" autocomplete="tel" inputmode="tel" placeholder="With country code" maxlength="40">
+              </div>
+            </div>
+            <div class="row2">
+              <div class="f">
+                <label for="country">Country</label>
+                <input type="text" id="country" name="country" autocomplete="country-name" required maxlength="80">
+              </div>
+              <div class="f">
+                <label for="gender">I am a</label>
+                <select id="gender" name="gender" required>
+                  <option value="" selected disabled>Choose</option>
+                  <option>Brother</option>
+                  <option>Sister</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- learner -->
+            <div class="branch fields" data-for="Learner">
+              <div class="f">
+                <span class="lbl">What do you want to learn?</span>
+                <div class="chips">
+                  <label class="chip"><input type="checkbox" name="interests" value="Arabic language"><span>Arabic language</span></label>
+                  <label class="chip"><input type="checkbox" name="interests" value="Qur'an reading"><span>Qur'an reading</span></label>
+                  <label class="chip"><input type="checkbox" name="interests" value="Tajweed"><span>Tajweed</span></label>
+                  <label class="chip"><input type="checkbox" name="interests" value="Hifz"><span>Hifz</span></label>
+                  <label class="chip"><input type="checkbox" name="interests" value="Islamic studies"><span>Islamic studies</span></label>
+                  <label class="chip"><input type="checkbox" name="interests" value="Something else"><span>Something else</span></label>
+                </div>
+              </div>
+              <div class="row2">
+                <div class="f">
+                  <label for="level">Your level</label>
+                  <select id="level" name="level">
+                    <option value="" selected>Choose</option>
+                    <option>Complete beginner</option>
+                    <option>Some basics</option>
+                    <option>Intermediate</option>
+                    <option>Advanced</option>
+                  </select>
+                </div>
+                <div class="f">
+                  <label for="pref">Teacher preference</label>
+                  <select id="pref" name="teacherPref">
+                    <option value="" selected>No preference</option>
+                    <option>Brother</option>
+                    <option>Sister</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- teacher -->
+            <div class="branch fields" data-for="Teacher" hidden>
+              <div class="f">
+                <label for="teaches">What do you teach?</label>
+                <input type="text" id="teaches" name="teaches" placeholder="e.g. Arabic grammar, tajweed, hifz" maxlength="200">
+              </div>
+              <div class="row2">
+                <div class="f">
+                  <label for="exp">Teaching experience</label>
+                  <select id="exp" name="experience">
+                    <option value="" selected>Choose</option>
+                    <option>New to teaching</option>
+                    <option>1–2 years</option>
+                    <option>3–5 years</option>
+                    <option>6+ years</option>
+                  </select>
+                </div>
+                <div class="f">
+                  <label for="qual">Ijazah or qualifications <span class="opt">(optional)</span></label>
+                  <input type="text" id="qual" name="qualifications" maxlength="200">
+                </div>
+              </div>
+              <div class="f">
+                <label for="about">A line about you <span class="opt">(optional)</span></label>
+                <textarea id="about" name="about" maxlength="600"></textarea>
+              </div>
+            </div>
+
+            <div class="hp" aria-hidden="true">
+              <label for="website">Leave this empty</label>
+              <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+            </div>
+
+            <p class="err" id="err" role="alert"></p>
+            <button class="submit" type="submit" id="submit">Join the waitlist
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+          </div>
+          <p class="fine">We'll only contact you about Sunnah Halaqah. No spam.</p>
+        </form>
+
+        <div class="done" id="done" hidden>
+          <div class="tick"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+          <h2 id="done-title">You're on the list</h2>
+          <p id="done-text">JazakAllahu khayran. We'll message you as soon as Sunnah Halaqah opens.</p>
+          <button class="ghost" type="button" id="share">Share with a friend</button>
+          <div class="note" id="preview-note" hidden>Preview: this page isn't connected to the Google Sheet yet, so nothing was saved.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="how">
+    <div class="wrap">
+      <h2>One halaqah, two ways in.</h2>
+      <div class="cols">
+        <div class="col">
+          <h3>For learners</h3>
+          <ol>
+            <li>Tell us what you want to learn and where you are now.</li>
+            <li>We help you find a teacher who fits your level and goals.</li>
+            <li>Learn one to one, at a pace that works for you.</li>
+          </ol>
+        </div>
+        <div class="col">
+          <h3>For teachers</h3>
+          <ol>
+            <li>Tell us what you teach and your experience.</li>
+            <li>We introduce you to learners who need your skill.</li>
+            <li>Teach what you know, and earn through it.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <img src="assets/logo.svg" alt="Sunnah Halaqah">
+    <span>© <span id="yr"></span> Sunnah Halaqah</span>
+  </div>
+</footer>
+
+<script>
+/* Paste the Google Apps Script web-app URL here (see README.md). Leave empty for preview mode. */
+const ENDPOINT = "";
+
+const form = document.getElementById('form');
+const err = document.getElementById('err');
+const btn = document.getElementById('submit');
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+function currentPath() { return form.querySelector('input[name=path]:checked').value; }
+function syncBranch() {
+  const p = currentPath();
+  form.querySelectorAll('.branch').forEach(b => b.hidden = b.dataset.for !== p);
+  document.getElementById('teaches').required = p === 'Teacher';
+}
+form.querySelectorAll('input[name=path]').forEach(r => r.addEventListener('change', syncBranch));
+
+// ?path=teach preselects the teacher path; ?src=reel-name tags where the visitor came from
+const qs = new URLSearchParams(location.search);
+if (/^teach/i.test(qs.get('path') || '')) document.getElementById('p-teach').checked = true;
+syncBranch();
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  err.textContent = '';
+  const visible = [...form.querySelectorAll('input, select, textarea')]
+    .filter(el => !el.closest('[hidden]') && !el.closest('.hp'));
+  const bad = visible.find(el => !el.checkValidity());
+  if (bad) {
+    form.classList.add('tried');
+    err.textContent = bad.type === 'email' && bad.value ? 'Please check your email address.' : 'Please fill in the highlighted fields.';
+    bad.focus();
+    return;
+  }
+  const fd = new FormData(form);
+  const p = currentPath();
+  const data = new URLSearchParams({
+    path: p,
+    name: fd.get('name').trim(),
+    email: fd.get('email').trim(),
+    whatsapp: fd.get('whatsapp').trim(),
+    country: fd.get('country').trim(),
+    gender: fd.get('gender') || '',
+    interests: p === 'Learner' ? fd.getAll('interests').join(', ') : '',
+    level: p === 'Learner' ? fd.get('level') : '',
+    teacherPref: p === 'Learner' ? fd.get('teacherPref') : '',
+    teaches: p === 'Teacher' ? fd.get('teaches').trim() : '',
+    experience: p === 'Teacher' ? fd.get('experience') : '',
+    qualifications: p === 'Teacher' ? fd.get('qualifications').trim() : '',
+    about: p === 'Teacher' ? fd.get('about').trim() : '',
+    source: qs.get('src') || document.referrer || 'direct',
+    website: fd.get('website') || ''
+  });
+
+  btn.disabled = true;
+  try {
+    if (ENDPOINT) {
+      // Apps Script answers with a redirect; no-cors keeps the browser from blocking it.
+      await fetch(ENDPOINT, { method: 'POST', mode: 'no-cors', body: data });
+    } else {
+      document.getElementById('preview-note').hidden = false;
+    }
+    if (p === 'Teacher') {
+      document.getElementById('done-text').textContent = "JazakAllahu khayran. We'll be in touch about teaching with Sunnah Halaqah as soon as we open.";
+    }
+    form.hidden = true;
+    document.getElementById('done').hidden = false;
+  } catch (_) {
+    err.textContent = "Something went wrong. Please check your connection and try again.";
+  } finally {
+    btn.disabled = false;
+  }
+});
+
+document.getElementById('share').addEventListener('click', async () => {
+  const url = location.origin + location.pathname;
+  const text = 'Find your teacher. Or become one. Join the Sunnah Halaqah waitlist:';
+  try {
+    if (navigator.share) { await navigator.share({ title: 'Sunnah Halaqah', text, url }); return; }
+    await navigator.clipboard.writeText(url);
+    document.getElementById('share').textContent = 'Link copied';
+  } catch (_) {}
+});
+</script>
+</body>
+</html>
